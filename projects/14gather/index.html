@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="vianney grenez, portfolio, gather, collecting app, personal project" />
-    <meta name="description" content="Gather — a collecting app. Personal project by Vianney Grenez." />
+    <meta name="description" content="Gather — an AI-powered social collection platform. Personal project by Vianney Grenez." />
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link id="favicon" rel="shortcut icon" href="../../assets/images/favicon.png" type="image/x-png">
@@ -18,17 +18,36 @@
 
     <div class="row">
         <div class="image">
-            <!-- Add images to ./images/ and reference them here, e.g.:
-            <img draggable="false" class="tilt" src="./images/screenshot-1.png" alt="" style="width: 400px; height: auto;">
-            -->
+            <img draggable="false" class="tilt" src="./images/Gather logo.png" alt="Gather logo" style="width: 400px; height: auto; display: block; margin: 0 auto;">
         </div>
 
         <div class="content">
-            <p><!-- Project description goes here --></p>
+            <p>Gather started from a simple personal problem: I collect bottle caps, but friends and family never knew which ones I already owned or was missing. Existing collection-management tools felt outdated and overly manual, so I built Gather: an AI-powered social collection platform that allows users to instantly identify, organize, and share collectibles through a simple photo. Designed initially for bottle caps but scalable to any collectible, the platform transforms collecting into a collaborative and accessible experience.</p>
+            <p>I developed the mobile application using Expo and React Native, with Firebase powering the shared real-time database. The core technical challenge was the image-recognition system: each uploaded image is vectorized into a feature embedding and compared against the database using similarity-search algorithms to retrieve the six closest matches. This human-in-the-loop approach combines AI efficiency with user validation, achieving approximately 99% automated recognition accuracy while maintaining full reliability. Building the project required independently learning and integrating machine learning workflows, vector similarity search, cloud infrastructure, and mobile deployment.</p>
+            <p>Since January 2026, Gather has been actively used by a growing group of collectors who continuously contribute to the shared database. More than a technical project, Gather reflects my passion for engineering and my ability to learn complex technologies from scratch to build a fully functional product solving a real-world problem.</p>
         </div>
 
         <div class="image">
-            <!-- Additional images can go here -->
+            <figure style="margin-bottom: 3rem;">
+                <img draggable="false" class="tilt" src="./images/picture.PNG" alt="Taking a picture in Gather" style="width: 400px; height: auto; display: block; margin: 0 auto;">
+                <figcaption style="margin-top: 0.5rem; font-size: 1.5rem; color: #444; text-align: center;">Taking a picture with self detection and auto focus features</figcaption>
+            </figure>
+            <figure style="margin-bottom: 3rem;">
+                <img draggable="false" class="tilt" src="./images/closest matches.PNG" alt="Closest matches in Gather" style="width: 400px; height: auto; display: block; margin: 0 auto;">
+                <figcaption style="margin-top: 0.5rem; font-size: 1.5rem; color: #444; text-align: center;">Image recognition and display of most similar bottle caps in the collection</figcaption>
+            </figure>
+            <figure style="margin-bottom: 3rem;">
+                <img draggable="false" class="tilt" src="./images/review.PNG" alt="Review page in Gather" style="width: 400px; height: auto; display: block; margin: 0 auto;">
+                <figcaption style="margin-top: 0.5rem; font-size: 1.5rem; color: #444; text-align: center;">Review page with Pays being shipped and collection already gathered</figcaption>
+            </figure>
+            <figure style="margin-bottom: 3rem;">
+                <img draggable="false" class="tilt" src="./images/pays.PNG" alt="Country selection in Gather" style="width: 400px; height: auto; display: block; margin: 0 auto;">
+                <figcaption style="margin-top: 0.5rem; font-size: 1.5rem; color: #444; text-align: center;">Selection by country</figcaption>
+            </figure>
+            <figure style="margin-bottom: 3rem;">
+                <img draggable="false" class="tilt" src="./images/changes.PNG" alt="Change options in Gather" style="width: 400px; height: auto; display: block; margin: 0 auto;">
+                <figcaption style="margin-top: 0.5rem; font-size: 1.5rem; color: #444; text-align: center;">Change options for each cap</figcaption>
+            </figure>
         </div>
     </div>
 </section>
