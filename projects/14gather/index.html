@@ -16,29 +16,27 @@
         margin: 0 auto;
         padding: 2rem 3rem 4rem;
       }
-      .gather-row {
+      .gather-hero {
         display: flex;
         flex-wrap: wrap;
         align-items: flex-start;
-        justify-content: center;
-        gap: 1.8rem 2.4rem;
-        margin-bottom: 3rem;
+        gap: 2.4rem;
+        margin-bottom: 3.5rem;
       }
-      .gather-shot {
-        flex: 0 1 22rem;
+      .gather-hero .gather-shot {
+        flex: 0 0 22rem;
         margin: 0;
       }
-      .gather-shot img {
+      .gather-hero .gather-shot img {
         width: 100%;
         max-width: 22rem;
         height: auto;
         display: block;
-        margin: 0 auto;
         border-radius: 5%;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
         cursor: pointer;
       }
-      .gather-shot figcaption {
+      .gather-hero .gather-shot figcaption {
         font-size: 1.25rem;
         color: #444;
         text-align: center;
@@ -47,9 +45,8 @@
         text-transform: none;
       }
       .gather-copy {
-        flex: 1 1 32rem;
-        max-width: 56rem;
-        padding: 0.5rem 0;
+        flex: 1 1 36rem;
+        min-width: 28rem;
       }
       .gather-copy p {
         font-size: 1.5rem;
@@ -57,21 +54,52 @@
         font-weight: 600;
         text-transform: none;
         line-height: 1.6;
+        margin: 0 0 1.5rem;
+      }
+      .gather-copy p:last-child {
+        margin-bottom: 0;
+      }
+      .gather-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem 2rem;
+      }
+      .gather-gallery .gather-shot {
+        flex: 1 1 20rem;
+        max-width: 24rem;
         margin: 0;
       }
-      .gather-row--centered {
-        justify-content: center;
+      .gather-gallery .gather-shot img {
+        width: 100%;
+        max-width: 20rem;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 5%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+        cursor: pointer;
+      }
+      .gather-gallery .gather-shot figcaption {
+        font-size: 1.15rem;
+        color: #444;
+        text-align: center;
+        margin-top: 0.6rem;
+        line-height: 1.3;
+        text-transform: none;
       }
       @media (max-width: 768px) {
         .gather-layout {
           padding: 1rem 2rem 3rem;
         }
-        .gather-shot {
-          flex: 1 1 100%;
-          max-width: 26rem;
-        }
+        .gather-hero .gather-shot,
         .gather-copy {
           flex: 1 1 100%;
+          min-width: 0;
+        }
+        .gather-gallery .gather-shot {
+          flex: 1 1 100%;
+          max-width: 26rem;
         }
       }
     </style>
@@ -82,24 +110,23 @@
     <h2 class="heading">Gather: a <span>collecting app</span></h2>
 
     <div class="gather-layout">
-        <div class="gather-row">
+        <div class="gather-hero">
             <figure class="gather-shot">
                 <img draggable="false" class="tilt" src="./images/picture.PNG" alt="Taking a picture in Gather">
                 <figcaption>Taking a picture with self detection and auto focus features</figcaption>
             </figure>
             <div class="gather-copy">
                 <p>Gather started from a simple personal problem: I collect bottle caps, but friends and family never knew which ones I already owned or was missing. Existing collection-management tools felt outdated and overly manual, so I built Gather: an AI-powered social collection platform that allows users to instantly identify, organize, and share collectibles through a simple photo. Designed initially for bottle caps but scalable to any collectible, the platform transforms collecting into a collaborative and accessible experience.</p>
+                <p>I developed the mobile application using Expo and React Native, with Firebase powering the shared real-time database. The core technical challenge was the image-recognition system: each uploaded image is vectorized into a feature embedding and compared against the database using similarity-search algorithms to retrieve the six closest matches. This human-in-the-loop approach combines AI efficiency with user validation, achieving approximately 99% automated recognition accuracy while maintaining full reliability. Building the project required independently learning and integrating machine learning workflows, vector similarity search, cloud infrastructure, and mobile deployment.</p>
+                <p>Since January 2026, Gather has been actively used by a growing group of collectors who continuously contribute to the shared database. More than a technical project, Gather reflects my passion for engineering and my ability to learn complex technologies from scratch to build a fully functional product solving a real-world problem.</p>
             </div>
+        </div>
+
+        <div class="gather-gallery">
             <figure class="gather-shot">
                 <img draggable="false" class="tilt" src="./images/closest matches.PNG" alt="Closest matches in Gather">
                 <figcaption>Image recognition and display of most similar bottle caps in the collection</figcaption>
             </figure>
-        </div>
-
-        <div class="gather-row">
-            <div class="gather-copy">
-                <p>I developed the mobile application using Expo and React Native, with Firebase powering the shared real-time database. The core technical challenge was the image-recognition system: each uploaded image is vectorized into a feature embedding and compared against the database using similarity-search algorithms to retrieve the six closest matches. This human-in-the-loop approach combines AI efficiency with user validation, achieving approximately 99% automated recognition accuracy while maintaining full reliability. Building the project required independently learning and integrating machine learning workflows, vector similarity search, cloud infrastructure, and mobile deployment.</p>
-            </div>
             <figure class="gather-shot">
                 <img draggable="false" class="tilt" src="./images/review.PNG" alt="Review page in Gather">
                 <figcaption>Review page with Pays being shipped and collection already gathered</figcaption>
@@ -108,16 +135,10 @@
                 <img draggable="false" class="tilt" src="./images/pays.PNG" alt="Country selection in Gather">
                 <figcaption>Selection by country</figcaption>
             </figure>
-        </div>
-
-        <div class="gather-row gather-row--centered">
             <figure class="gather-shot">
                 <img draggable="false" class="tilt" src="./images/changes.PNG" alt="Change options in Gather">
                 <figcaption>Change options for each cap</figcaption>
             </figure>
-            <div class="gather-copy">
-                <p>Since January 2026, Gather has been actively used by a growing group of collectors who continuously contribute to the shared database. More than a technical project, Gather reflects my passion for engineering and my ability to learn complex technologies from scratch to build a fully functional product solving a real-world problem.</p>
-            </div>
         </div>
     </div>
 </section>
